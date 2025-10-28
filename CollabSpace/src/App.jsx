@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoginRegister from "./components/LoginRegister/LoginRegister.jsx";
 import Heading from "./components/Heading/Heading.jsx";
 import Quatashion from "./components/quatashion/quatashion.jsx";
