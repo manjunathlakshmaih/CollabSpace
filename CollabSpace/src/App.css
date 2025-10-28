@@ -1,4 +1,50 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* main content (left side visible) */
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+  transition: filter 200ms ease, opacity 200ms ease;
+}
+
+/* blur / dim the content when modal open */
+.content.blurred {
+  filter: blur(4px) brightness(0.9);
+  pointer-events: none; /* prevent interacting with blurred content */
+  user-select: none;
+}
+
+/* modal overlay centered in viewport */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px); /* blurs whatever is behind the overlay if supported */
+  z-index: 1000;
+  padding: 2rem;
+}
+
+/* modal card to contain the LoginRegister component */
+.modal-card {
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  width: auto;
+  /* optional subtle entrance */
+  transform: translateY(0);
+  transition: transform 160ms ease, opacity 160ms ease;
 }
